@@ -103,7 +103,6 @@ gulp.task('watch', () => {
   livereload.listen();
   gulp.watch('src/**/*.html', ['html']);
   gulp.watch('src/**/*.js', ['scripts']);
-  gulp.watch('src/**/*.scss', ['sass']);
   gulp.watch('src/**/*.scss', ['styles', 'styles:vendor']);
 });
 
