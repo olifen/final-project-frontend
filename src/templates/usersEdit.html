@@ -1,0 +1,13 @@
+<form novalidate ng-submit="usersEdit.update()">
+  <div>
+    edit
+    <label>Username</label>
+    <input type="text" placeholder="Username" ng-model="usersEdit.user.username">
+  </div>
+  <div>
+    <label>Email</label>
+    <input type="email" placeholder="Email" ng-model="usersEdit.user.email">
+  </div>
+
+  <button>Update</button>
+</form>
