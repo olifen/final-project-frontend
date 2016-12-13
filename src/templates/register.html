@@ -1,20 +1,32 @@
 <form novalidate ng-submit="register.submit()">
-  <div>
+  <div class="form-group">
     <label>Username</label>
-    <input type="text" placeholder="Username" ng-model="register.user.username">
+    <input class="form-control" type="text" placeholder="Username" ng-model="register.user.username">
+  </div>
+  <div>
+    <label>First Name</label>
+    <input class="form-control" type="text" placeholder="First Name" ng-model="register.user.first_name">
+  </div>
+  <div>
+    <label>Last Name</label>
+    <input class="form-control" type="text" placeholder="Last Name" ng-model="register.user.last_name">
+  </div>
+  <div>
+    <label>Location</label>
+    <input class="form-control" type="text" ng-model="register.user.location" googleplace user="register.user">
   </div>
   <div>
     <label>Email</label>
-    <input type="email" placeholder="Email" ng-model="register.user.email">
+    <input class="form-control" type="email" placeholder="Email" ng-model="register.user.email">
   </div>
   <div>
     <label>Password</label>
-    <input type="password" placeholder="Password" ng-model="register.user.password">
+    <input class="form-control" type="password" placeholder="Password" ng-model="register.user.password">
   </div>
   <div>
     <label>Password Confirmation</label>
-    <input type="password" placeholder="Password Confirmation" ng-model="register.user.password_confirmation">
+    <input class="form-control" type="password" placeholder="Password Confirmation" ng-model="register.user.password_confirmation">
   </div>
 
-  <button>Register</button>
+  <button class="btn btn-primary">Register</button>
 </form>

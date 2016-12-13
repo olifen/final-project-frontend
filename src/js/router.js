@@ -4,6 +4,10 @@ angular.module('finalProject')
 Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
+    .state('home', {
+      url: '/home',
+      templateUrl: '/templates/home.html'
+    })
     .state('usersIndex', {
       url: '/users',
       templateUrl: '/templates/usersIndex.html',
@@ -33,7 +37,42 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/games',
       templateUrl: '/templates/gamesIndex.html',
       controller: 'GamesIndexController as gamesIndex'
+    })
+    .state('gamesNew', {
+      url: '/games/new',
+      templateUrl: '/templates/gamesNew.html',
+      controller: 'GamesNewController as gamesNew'
+    })
+    .state('gamesShow', {
+      url: '/games/:id',
+      templateUrl: '/templates/gamesShow.html',
+      controller: 'GamesShowController as gamesShow'
+    })
+    .state('gamesEdit', {
+      url: '/games/:id/edit',
+      templateUrl: '/templates/gamesEdit.html',
+      controller: 'GamesEditController as gamesEdit'
+    })
+    .state('venuesIndex', {
+      url: '/venues',
+      templateUrl: '/templates/venuesIndex.html',
+      controller: 'VenuesIndexController as venuesIndex'
+    })
+    .state('venuesNew', {
+      url: '/venues/new',
+      templateUrl: '/templates/venuesNew.html',
+      controller: 'VenuesNewController as venuesNew'
+    })
+    .state('venuesShow', {
+      url: '/venues/:id',
+      templateUrl: '/templates/venuesShow.html',
+      controller: 'VenuesShowController as venuesShow'
+    })
+    .state('venuesEdit', {
+      url: '/venues/:id/edit',
+      templateUrl: '/templates/venuesEdit.html',
+      controller: 'VenuesEditController as venuesEdit'
     });
 
-  $urlRouterProvider.otherwise('/users');
+  $urlRouterProvider.otherwise('/home');
 }

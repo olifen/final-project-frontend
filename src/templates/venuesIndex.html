@@ -1,0 +1,16 @@
+<section>
+  <h1>Venues Index</h1>
+  <google-map venues="venuesIndex.all" ng-if="venuesIndex.all"></google-map><br>
+  <div class="card col-md-4" ng-repeat="venue in venuesIndex.all">
+    <img class="card-img-top venue-image" src="https://blog.mylocalpitch.com/wp-content/uploads/2014/06/Powerleague-Barnet-Football.jpg" alt="Card image cap">
+    <div class="card-block">
+      <a ui-sref="venuesShow({ id: venue.id })">
+        <h4 class="card-title">{{ venue.name }}</h4>
+      </a>
+      <a ui-sref="venuesShow({ id: venue.id })">
+        <p class="card-text">{{ venue.address }}</p>
+      </a>
+    </div>
+  </div>
+  <button ui-sref="venuesNew">Create Venue</button>
+</section>

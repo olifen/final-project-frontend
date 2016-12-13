@@ -1,0 +1,44 @@
+<form novalidate ng-submit="gamesNew.create()">
+  <div>
+    <label>Game Name</label>
+    <input type="text" placeholder="Game Name" ng-model="gamesNew.game.name">
+  </div>
+  <div>
+    <label>Venue</label>
+    {{ gamesNew.game }}
+    <select name="venue" ng-model="gamesNew.game.venue_id" ng-options="venue.id as venue.name for venue in gamesNew.venues">
+      <option value="gamesNew.game">Select Venue</option>
+    </select>
+  </div>
+  <div>
+    <label>Date</label>
+    <input type="date" placeholder="Date" ng-model="gamesNew.game.date">
+  </div>
+  <div>
+    <label>Start Time</label>
+    <input type="time" placeholder="Start Time" ng-model="gamesNew.game.start_time">
+  </div>
+  <div>
+    <label>End Time</label>
+    <input type="time" placeholder="End Time" ng-model="gamesNew.game.end_time">
+  </div>
+  <div>
+    <label>Number of Places</label>
+    <input type="number" placeholder="Number of Places" ng-model="gamesNew.game.no_of_places">
+  </div>
+  <div>
+    <label>Price</label>
+    <input type="number" placeholder="Price" ng-model="gamesNew.game.price">
+  </div>
+  <button>Create Game</button>
+</form>
+
+
+<!-- t.integer  "user_id"
+t.integer  "no_of_places"
+t.time     "start_time"
+t.time     "end_time"
+t.date     "date"
+t.string   "name"
+t.integer  "venue_id"
+t.float    "price" -->

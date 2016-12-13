@@ -1,11 +1,12 @@
 <section>
   <h1>Users Index</h1>
-  <ul>
-    <li ng-repeat="user in usersIndex.all">
+  <div class="card col-md-2" ng-repeat="user in usersIndex.all">
+    <img class="card-img-top" src="https://app.pelorous.com/public/cms/126/232/23/69/oxCOpb_web.jpg" alt="Card image cap">
+    <div class="card-block">
       <a ui-sref="usersShow({ id: user.id })">
-        <h2>{{ user.username }}</h2>
-        <h4>{{ user.email }}</h4>
+        <h4 class="card-title">{{ user.username }}</h4>
       </a>
-    </li>
-  </ul>
+        <p class="card-text">{{ user.email }}</p>
+    </div>
+  </div>
 </section>

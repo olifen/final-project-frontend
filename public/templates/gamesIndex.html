@@ -1,11 +1,32 @@
 <section>
   <h1>Games Index</h1>
-  <ul>
-    <li ng-repeat="game in gamesIndex.all">
-      <!-- <a ui-sref="gamesShow({ id: game.id })"> -->
-        <h2>{{ game.address }}</h2>
-        <!-- <h4>{{ user.email }}</h4> -->
+  <div class="card col-md-4" ng-repeat="game in gamesIndex.all">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-block">
+      <a ui-sref="gamesShow({ id: game.id })">
+        <h4 class="card-title">{{ game.name }}</h4>
       </a>
-    </li>
-  </ul>
+      <a ui-sref="venuesShow({ id: game.venue.id })">
+        <p class="card-text">{{ game.venue.name }}</p>
+      </a>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ game.date | date : format : fullDate }}</li>
+      <li class="list-group-item">{{ game.start_time | date:'hh:mm a' }}</li>
+      <li class="list-group-item">{{ game.end_time | date:'hh:mm a' }}</li>
+    </ul>
+  </div>
+  <button ui-sref="gamesNew">Create Game</button>
 </section>
+
+
+<!-- t.integer  "user_id"
+t.integer  "no_of_places"
+t.time     "start_time"
+t.time     "end_time"
+t.date     "date"
+t.datetime "created_at",   null: false
+t.datetime "updated_at",   null: false
+t.string   "name"
+t.integer  "venue_id"
+t.float    "price" -->

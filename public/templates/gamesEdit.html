@@ -1,0 +1,33 @@
+<form novalidate ng-submit="gamesEdit.update()">
+  <div>
+    <label>Game Name</label>
+    <input type="text" placeholder="Game Name" ng-model="gamesEdit.game.name">
+  </div>
+  <div>
+    <label>Venue</label>
+    <select id="venue_id" name="venue" ng-model="gamesEdit.game.venue_id" ng-options="venue.id as venue.name for venue in gamesNew.venues">
+      <option value="">Select Venue</option>
+    </select>
+  </div>
+  <div>
+    <label>Date</label>
+    <input type="date" placeholder="Date" ng-model="gamesEdit.game.date">
+  </div>
+  <div>
+    <label>Start Time</label>
+    <input type="time" placeholder="Start Time" ng-model="gamesEdit.game.start_time">
+  </div>
+  <div>
+    <label>End Time</label>
+    <input type="time" placeholder="End Time" ng-model="gamesEdit.game.end_time">
+  </div>
+  <div>
+    <label>Number of Places</label>
+    <input type="number" placeholder="Number of Places" ng-model="gamesEdit.game.no_of_places">
+  </div>
+  <div>
+    <label>Price</label>
+    <input type="number" placeholder="Price" ng-model="gamesEdit.game.price">
+  </div>
+  <button>Update Game</button>
+</form>

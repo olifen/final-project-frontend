@@ -1,12 +1,32 @@
 <form novalidate ng-submit="usersEdit.update()">
+
   <div>
-    edit
     <label>Username</label>
     <input type="text" placeholder="Username" ng-model="usersEdit.user.username">
   </div>
   <div>
+    <label>First Name</label>
+    <input type="text" placeholder="First Name" ng-model="usersEdit.user.first_name">
+  </div>
+  <div>
+    <label>Last Name</label>
+    <input type="text" placeholder="Last Name" ng-model="usersEdit.user.last_name">
+  </div>
+  <div>
+    <label>Location</label>
+    <input type="text" placeholder="Location" ng-model="usersEdit.user.location">
+  </div>
+  <div>
     <label>Email</label>
     <input type="email" placeholder="Email" ng-model="usersEdit.user.email">
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" placeholder="Password" ng-model="usersEdit.user.password">
+  </div>
+  <div>
+    <label>Password Confirmation</label>
+    <input type="password" placeholder="Password Confirmation" ng-model="usersEdit.user.password_confirmation">
   </div>
 
   <button>Update</button>

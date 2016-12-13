@@ -1,0 +1,35 @@
+.google-map {
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.venue-image {
+  width: 200px;
+  height: 200px;
+}
+
+body {
+  background-image: url("http://thegrangenews.co.uk/sportscentre/wp-content/uploads/2012/10/astro1-1024x682.jpg");
+}
+
+.home {
+  .home-title {
+    color: white;
+    text-align: center;
+    margin: 80px;
+    font-size: 46px;
+  }
+  .login, .register {
+    width: 48%;
+  }
+  .login-register {
+    // align-items: center;
+    // margin-top: 300px;
+    // margin-left: 92px;
+    // margin-right: 92px;
+    width: 50%;
+    margin: 0 auto;
+  }
+}

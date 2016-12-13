@@ -1,0 +1,20 @@
+<form novalidate ng-submit="venuesNew.create()">
+  <div class="form-group">
+    <label>Venue Name</label>
+    <input class="form-control" type="text" placeholder="Venue Name" ng-model="venuesNew.venue.name">
+  </div>
+  <div>
+    <label>Address</label>
+    <input class="form-control" type="text" ng-model="venuesNew.venue.address" googleplace venue="venuesNew.venue">
+  </div>
+
+  <button>Create Venue</button>
+</form>
+
+{{ venuesNew.venue }}
+
+
+  <!-- <div>
+    <label>Address</label>
+    <input type="text" ng-model="placesNew.place.address" google-place place="placesNew.place">
+  </div> -->

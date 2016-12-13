@@ -1,0 +1,42 @@
+<section>
+  <p>Venue: {{ venuesShow.venue.name }}</p>
+  <p>Address: {{ venuesShow.venue.postcode }}</p>
+
+  <div class="card col-md-4" ng-repeat="game in venuesShow.venue.games">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-block">
+      <a ui-sref="gamesShow({ id: game.id })">
+        <h4 class="card-title">{{ game.name }}</h4>
+      </a>
+      <a ui-sref="venuesShow({ id: game.venue.id })">
+        <p class="card-text">{{ game.venue.name }}</p>
+      </a>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{ game.date | date : format : fullDate }}</li>
+      <li class="list-group-item">{{ game.start_time | date:'hh:mm a' }}</li>
+      <li class="list-group-item">{{ game.end_time | date:'hh:mm a' }}</li>
+    </ul>
+  </div>
+
+  <button ui-sref="venuesEdit({ id: venuesShow.venue.id })" class="button btn btn-primary">Edit Venue</button>
+  <button ng-if="main.isLoggedIn()" ng-click="venuesShow.delete()" class="button btn btn-danger">Delete Venue</button>
+</section>
+
+
+<!-- <div class="card col-md-4" ng-repeat="game in gamesIndex.all">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-block">
+    <a ui-sref="gamesShow({ id: game.id })">
+      <h4 class="card-title">{{ game.name }}</h4>
+    </a>
+    <a ui-sref="venuesShow({ id: game.venue.id })">
+      <p class="card-text">{{ game.venue.name }}</p>
+    </a>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{ game.date | date : format : fullDate }}</li>
+    <li class="list-group-item">{{ game.start_time | date:'hh:mm a' }}</li>
+    <li class="list-group-item">{{ game.end_time | date:'hh:mm a' }}</li>
+  </ul>
+</div> -->
