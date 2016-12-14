@@ -1,7 +1,7 @@
 <section>
   <h1>Users Index</h1>
   <div class="card col-md-2" ng-repeat="user in usersIndex.all">
-    <img class="card-img-top" src="https://app.pelorous.com/public/cms/126/232/23/69/oxCOpb_web.jpg" alt="Card image cap">
+    <img class="card-img-top" src="{{ user.image }}" alt="{{ user.username }}">
     <div class="card-block">
       <a ui-sref="usersShow({ id: user.id })">
         <h4 class="card-title">{{ user.username }}</h4>

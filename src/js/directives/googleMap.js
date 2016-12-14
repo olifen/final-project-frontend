@@ -8,7 +8,8 @@ function googleMap($window) {
     replace: true,
     template: '<div class="google-map"></div>',
     scope: {
-      venues: '='
+      venues: '=',
+      center: '='
     },
     link: function($scope, element) {
 
@@ -19,6 +20,17 @@ function googleMap($window) {
         },
         zoom: 11
       });
+
+      if($scope.center && $scope.center.lat && $scope.center.lng) {
+        const center = { lat: $scope.center.lat, lng: $scope.center.lng };
+        map.setCenter(center);
+
+        new $window.google.maps.Marker({
+          position: center,
+          map: map
+        });
+      }
+
       let markers = [];
       function clearMarkers() {
         markers.forEach((marker) => {
@@ -29,7 +41,7 @@ function googleMap($window) {
 
       $scope.$watch('venues.$resolved', () => {
         clearMarkers();
-        if($scope.venues.$resolved) {
+        if($scope.venues && $scope.venues.$resolved) {
           $scope.venues.forEach((venue) => {
             if(venue.lat && venue.lng) {
               const marker = new $window.google.maps.Marker({
@@ -39,8 +51,9 @@ function googleMap($window) {
               });
               marker.addListener('click', () => {
                 // infoWindow.open(map, marker);
-                markers.push(marker);
               });
+
+              markers.push(marker);
             }
           });
         }

@@ -1,14 +1,28 @@
-<section>
-  <p>Name: {{ gamesShow.game.name }}</p>
+<section class="gamesShow-page">
+  <h1>{{ gamesShow.game.name }}</h1>
   <p>Venue: <a ui-sref="venuesShow({ id: gamesShow.game.venue.id })">{{ gamesShow.game.venue.name }}</a></p>
   <p>Date: {{ gamesShow.game.date | date : format : fullDate }}</p>
-  <p>Start Time: {{ gamesShow.game.start_time | date:'hh:mm a' }}</p>
-  <p>End Time: {{ gamesShow.game.end_time | date:'hh:mm a' }}</p>
+  <p>Times: {{ gamesShow.game.start_time | date:'hh:mm a' }} - {{ gamesShow.game.end_time | date:'hh:mm a' }}</p>
   <p>Number of Places: {{ gamesShow.game.no_of_places }}</p>
   <p>Price: £{{ gamesShow.game.price }}</p>
   <p>Organiser: <a ui-sref="usersShow({ id: gamesShow.game.user.id })">{{ gamesShow.game.user.username}}</a></p>
-  <button>Join Game</button><br>
-  <br>
-  <a ui-sref="gamesEdit({ id: gamesShow.game.id })" class="button">Edit</a>
-  <button ng-if="main.isLoggedIn()" ng-click="gamesShow.delete()">Delete</button>
+
+
+
+
+  <ul>
+    <p>Players:</p>
+    <li ng-repeat="membership in gamesShow.game.memberships">
+      <p>{{membership.user.first_name}} {{membership.user.last_name}}</p>
+      <button class="btn btn-danger" ng-click="gamesShow.leaveGame(membership)">Leave Game</button>
+
+    </li>
+
+  </ul>
+
+  <button class="btn btn-primary" ng-click="gamesShow.addMembership()" ng-if="gamesShow.canJoinGame()">Join Game</button>
+
+  <button class="btn btn-primary" ui-sref="gamesEdit({ id: gamesShow.game.id })" class="button">Edit</button>
+  <button class="btn btn-danger" ng-if="main.isLoggedIn()" ng-click="gamesShow.delete()">Delete</button>
+
 </section>

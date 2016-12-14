@@ -1,13 +1,23 @@
-<section>
-  <p>Username: {{ usersShow.user.username }}</p>
-  <p>Name: {{ usersShow.user.first_name }} {{ usersShow.user.last_name }}</p>
-  <p>Location: {{ usersShow.user.location }}</p>
-  <p>Email: {{ usersShow.user.email }}</p>
+<section class="profile-page row">
 
-  <google-map center="{ lat: 52.1, lng: -0.06 }"></google-map><br>
+  <h1>{{ usersShow.user.username }}</h1>
+  <!-- <img class="profile-image col-xs-6" src="{{ usersShow.user.image }}" alt="{{ usersShow.user.username }}"> -->
+  <div class="col-xs-6">
+    <div class="profile-image" style="background-image:url('{{ usersShow.user.image }}')"></div>
+  </div>
 
-  <a ng-if="main.isLoggedIn()" ui-sref="usersEdit({ id: usersShow.user.id })" class="button">Edit</a>
-  <button ng-if="main.isLoggedIn()" ng-click="usersShow.delete()">Delete</button>
+  <div class="col-xs-6">
+    <button class="btn btn-primary user-btns" ui-sref="venuesNew">Create Venue</button><br>
+    <button class="btn btn-primary user-btns" ui-sref="gamesNew">Create Game</button><br>
+    <button class="btn btn-primary user-btns" ui-sref="gamesIndex">Find Games</button>
+  </div>
 
+  <div class="col-xs-12 user-info">
+    <p>Name: {{ usersShow.user.first_name }} {{ usersShow.user.last_name }}</p>
+    <p>Location: {{ usersShow.user.location }}</p>
+    <p>Email: {{ usersShow.user.email }}</p>
+    <button ng-if="main.isLoggedIn()" ui-sref="usersEdit({ id: usersShow.user.id })" class="btn btn-primary user-crud">Edit</button>
+    <button ng-if="main.isLoggedIn()" ng-click="usersShow.delete()" class="btn btn-danger user-crud">Delete</button>
+  </div>
 
 </section>

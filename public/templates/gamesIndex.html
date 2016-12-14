@@ -1,32 +1,20 @@
-<section>
-  <h1>Games Index</h1>
-  <div class="card col-md-4" ng-repeat="game in gamesIndex.all">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-block">
-      <a ui-sref="gamesShow({ id: game.id })">
-        <h4 class="card-title">{{ game.name }}</h4>
-      </a>
-      <a ui-sref="venuesShow({ id: game.venue.id })">
-        <p class="card-text">{{ game.venue.name }}</p>
-      </a>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{ game.date | date : format : fullDate }}</li>
-      <li class="list-group-item">{{ game.start_time | date:'hh:mm a' }}</li>
-      <li class="list-group-item">{{ game.end_time | date:'hh:mm a' }}</li>
-    </ul>
+<section class="games-page">
+  <h1 class="games-title">Games</h1>
+
+  <div class="card col-md-4 games-list" ng-repeat="game in gamesIndex.all">
+    <a ui-sref="gamesShow({ id: game.id })">
+
+      <div class="card-block">
+        <img class="card-img-top games-image" src="http://simpleicon.com/wp-content/uploads/football.png" alt="Card image cap">
+        <div class="game-details">
+          <h4 class="card-title">{{ game.name }}</h4>
+          <p class="card-text">{{ game.venue.name }}</p>
+          <p class="card-text">{{ game.date | date : format : fullDate }}</p>
+          <p class="card-text">{{ game.start_time | date:'hh:mm a' }} - {{ game.end_time | date:'hh:mm a' }}</p>
+        </div>
+      </div>
+    </a>
+
   </div>
-  <button ui-sref="gamesNew">Create Game</button>
+  <button class="btn btn-primary create-game" ui-sref="gamesNew">Create Game</button>
 </section>
-
-
-<!-- t.integer  "user_id"
-t.integer  "no_of_places"
-t.time     "start_time"
-t.time     "end_time"
-t.date     "date"
-t.datetime "created_at",   null: false
-t.datetime "updated_at",   null: false
-t.string   "name"
-t.integer  "venue_id"
-t.float    "price" -->

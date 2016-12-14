@@ -1,17 +1,45 @@
-.google-map {
-  width: 400px;
-  height: 400px;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.venue-image {
-  width: 200px;
-  height: 200px;
-}
-
 body {
   background-image: url("http://thegrangenews.co.uk/sportscentre/wp-content/uploads/2012/10/astro1-1024x682.jpg");
+}
+
+.google-map {
+  width: 345px;
+  height: 200px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-page {
+  color: white;
+  h1 {
+    text-align: center;
+  }
+  .profile-image {
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+  .user-btns {
+    margin: 7% 0 auto;
+    width: 150px;
+  }
+  .user-info {
+    margin: 5% 0 auto;
+  }
+  .user-crud {
+    width: 30%;
+    font-size: 14px;
+    margin-left: 9%;
+    margin-right: 9%;
+    margin-top: 60%;
+  }
 }
 
 .home {
@@ -23,13 +51,193 @@ body {
   }
   .login, .register {
     width: 48%;
+    font-size: 14px;
   }
   .login-register {
-    // align-items: center;
-    // margin-top: 300px;
-    // margin-left: 92px;
-    // margin-right: 92px;
     width: 50%;
     margin: 0 auto;
+    margin-top: 70%;
+  }
+}
+
+.register-page {
+  .register-title {
+    color: white;
+    text-align: center;
+    margin: 80px;
+    font-size: 46px;
+  }
+  label {
+    color: white;
+    text-align: center;
+  }
+  .register {
+    width: 48%;
+    font-size: 14px;
+    margin-left: 24%;
+    margin-right: 24%;
+    margin-top: 10%;
+  }
+}
+
+.login-page {
+  .login-title {
+    color: white;
+    text-align: center;
+    margin: 80px;
+    font-size: 46px;
+  }
+  label {
+    color: white;
+    text-align: center;
+  }
+  .login {
+    width: 48%;
+    font-size: 14px;
+    margin-left: 24%;
+    margin-right: 24%;
+    margin-top: 10%;
+  }
+}
+
+.venuesNew-page {
+  .venuesNew-title {
+    color: white;
+    text-align: center;
+    margin: 80px;
+    font-size: 46px;
+  }
+  label {
+    color: white;
+    text-align: center;
+  }
+  .create-venue {
+    width: 48%;
+    font-size: 14px;
+    margin-left: 24%;
+    margin-right: 24%;
+    margin-top: 10%;
+  }
+}
+
+.venues-page {
+  .venues-title {
+    color: white;
+    text-align: center;
+    margin: 10px;
+    font-size: 46px;
+  }
+  .venues-list {
+    background-color: rgba(0,0,0,0.8);
+    .venue-image {
+      width: 41px;
+      height: 41px;
+    }
+    .venue-details {
+      float: right;
+      text-align: left;
+    }
+    .card-title {
+      font-size: 14px;
+    }
+    .card-text {
+      font-size: 10px;
+    }
+  }
+}
+
+.venuesShow-page {
+  color: white;
+  .venuesShow-title {
+    text-align: center;
+    margin: 10px;
+    font-size: 46px;
+  }
+  .games-list {
+    background-color: rgba(255,255,255,0.8);
+    .games-image {
+      width: 60px;
+      height: 60px;
+      margin-top: 6px;
+    }
+    .game-details {
+      float: right;
+      text-align: left;
+    }
+    .card-title {
+      font-size: 14px;
+    }
+    .card-text {
+      font-size: 10px;
+    }
+  }
+}
+
+.create-venue2, .create-game {
+  width: 48%;
+  font-size: 14px;
+  margin-left: 24%;
+  margin-right: 24%;
+  margin-bottom: 5%;
+}
+
+.gamesNew-page {
+  color: white;
+}
+
+.games-page {
+  .games-title {
+    color: white;
+    text-align: center;
+    margin: 10px;
+    font-size: 46px;
+  }
+  .games-list {
+    background-color: rgba(255,255,255,0.8);
+    .games-image {
+      width: 60px;
+      height: 60px;
+      margin-top: 25px;
+    }
+    .game-details {
+      float: right;
+      text-align: left;
+    }
+    .card-title {
+      font-size: 14px;
+    }
+    .card-text {
+      font-size: 10px;
+    }
+  }
+}
+
+.venue-crud {
+  width: 33%;
+  font-size: 12px;
+  margin-left: 12%;
+  // margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.create-venue2, .create-game {
+  width: 50%;
+  font-size: 14px;
+  margin-left: 24%;
+  margin-right: 24%;
+  margin-bottom: 5%;
+}
+
+.gamesShow-page {
+  background-color: rgba(0,0,0,0.8);
+  h1 {
+    color: white;
+    text-align: center;
+    margin: 10px;
+    font-size: 46px;
+  }
+  p {
+    color: white;
   }
 }

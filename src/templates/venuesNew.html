@@ -1,17 +1,27 @@
-<form novalidate ng-submit="venuesNew.create()">
-  <div class="form-group">
-    <label>Venue Name</label>
-    <input class="form-control" type="text" placeholder="Venue Name" ng-model="venuesNew.venue.name">
-  </div>
-  <div>
-    <label>Address</label>
-    <input class="form-control" type="text" ng-model="venuesNew.venue.address" googleplace venue="venuesNew.venue">
-  </div>
+<section class="venuesNew-page">
+  <h1 class="venuesNew-title">Create Venue</h1>
+  <form novalidate ng-submit="venuesNew.create()">
 
-  <button>Create Venue</button>
-</form>
+    <div class="form-group">
+      <label for="name" class="col-xs-5">Venue Name</label>
+      <div class="col-xs-7">
+        <input class="form-control" type="text" placeholder="Venue Name" name="name" ng-model="venuesNew.venue.name">
+      </div>
+    </div>
 
-{{ venuesNew.venue }}
+    <div class="form-group">
+      <label for="address" class="col-xs-5">Address</label>
+      <div class="col-xs-7">
+        <input class="form-control" type="text" name="address" ng-model="venuesNew.venue.address" googleplace venue="venuesNew.venue">
+      </div>
+    </div>
+
+    <button class="btn btn-primary create-venue">Create Venue</button>
+  </form>
+
+  <!-- {{ venuesNew.venue }} -->
+</section>
+
 
 
   <!-- <div>

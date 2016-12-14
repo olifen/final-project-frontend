@@ -1,26 +1,24 @@
-<section>
-  <p>Venue: {{ venuesShow.venue.name }}</p>
+<section class="venuesShow-page">
+  <h1 class="venuesShow-title">{{ venuesShow.venue.name }}</h1>
+  <google-map center="venuesShow.venue" ng-if="venuesShow.venue.$resolved"></google-map><br>
   <p>Address: {{ venuesShow.venue.postcode }}</p>
 
-  <div class="card col-md-4" ng-repeat="game in venuesShow.venue.games">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-block">
-      <a ui-sref="gamesShow({ id: game.id })">
-        <h4 class="card-title">{{ game.name }}</h4>
-      </a>
-      <a ui-sref="venuesShow({ id: game.venue.id })">
-        <p class="card-text">{{ game.venue.name }}</p>
-      </a>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{ game.date | date : format : fullDate }}</li>
-      <li class="list-group-item">{{ game.start_time | date:'hh:mm a' }}</li>
-      <li class="list-group-item">{{ game.end_time | date:'hh:mm a' }}</li>
-    </ul>
+  <div class="card col-md-4 games-list" ng-repeat="game in venuesShow.venue.games">
+    <a ui-sref="gamesShow({ id: game.id })">
+
+      <div class="card-block">
+        <img class="card-img-top games-image" src="http://simpleicon.com/wp-content/uploads/football.png" alt="Card image cap">
+        <div class="game-details">
+          <h4 class="card-title">{{ game.name }}</h4>
+          <p class="card-text">{{ game.date | date : format : fullDate }}</p>
+          <p class="card-text">{{ game.start_time | date:'hh:mm a' }} - {{ game.end_time | date:'hh:mm a' }}</p>
+        </div>
+      </div>
   </div>
 
-  <button ui-sref="venuesEdit({ id: venuesShow.venue.id })" class="button btn btn-primary">Edit Venue</button>
-  <button ng-if="main.isLoggedIn()" ng-click="venuesShow.delete()" class="button btn btn-danger">Delete Venue</button>
+  <button ng-if="main.isLoggedIn()" class="button btn btn-primary create-game" ui-sref="gamesNew">Create Game</button><br>
+  <button ng-if="main.isLoggedIn()" class="button btn btn-primary venue-crud" ui-sref="venuesEdit({ id: venuesShow.venue.id })">Edit Venue</button>
+  <button ng-if="main.isLoggedIn()" class="button btn btn-danger venue-crud" ng-click="venuesShow.delete()">Delete Venue</button>
 </section>
 
 
