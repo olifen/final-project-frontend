@@ -1,5 +1,5 @@
 angular.module('finalProject', ['ngResource', 'ui.router', 'satellizer'])
-  .constant('API_URL', window.location.hostname === 'localhost' ? 'http://localhost:3000' : '//kickabout-api.herokuapp.com')
+  .constant('API_URL', window.location.hostname === 'localhost' ? 'http://localhost:3000/api' : '//kickabout-api.herokuapp.com/api')
 
   .config(Auth);
 

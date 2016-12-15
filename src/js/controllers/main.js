@@ -8,8 +8,6 @@ function MainController($auth, $state, $rootScope, User) {
   main.isLoggedIn = $auth.isAuthenticated;
   main.message = null;
 
-  main.currentUser = User.get({id: $auth.getPayload().id});
-
   function logout() {
     $auth.logout()
       .then(() => {
@@ -20,6 +18,11 @@ function MainController($auth, $state, $rootScope, User) {
   const protectedStates = ['usersEdit', 'usersNew'];
 
   function secureState(e, toState) {
+    const authPayload = $auth.getPayload();
+
+    if (authPayload) {
+      main.currentUser = User.get({ id: authPayload.id });
+    }
     main.message = null;
     if(!$auth.isAuthenticated() && protectedStates.includes(toState.name)) {
       e.preventDefault();
