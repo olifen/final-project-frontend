@@ -23,18 +23,22 @@ function googleplace($window) {
         const place = autocomplete.getPlace();
         const latLng = place.geometry.location.toJSON();
 
-        $scope.user.lat = latLng.lat;
-        $scope.user.lat = latLng.lng;
+        if($scope.venue) {
+          $scope.venue.lat = latLng.lat;
+          $scope.venue.lng = latLng.lng;
+          $scope.venue.postcode = place.formatted_address;
+        }
 
-        $scope.venue.lat = latLng.lat;
-        $scope.venue.lng = latLng.lng;
-        $scope.venue.postcode = place.formatted_address;
+        if($scope.user) {
+          $scope.user.lat = latLng.lat;
+          $scope.user.lng = latLng.lng;
+        }
 
         //
         // console.log($scope.user.lat);
-
-        console.log(place);
-        console.log(place.formatted_address);
+        console.log('scope:', $scope.user);
+        // console.log(place);
+        // console.log(place.formatted_address);
 
 
         model.$setViewValue(element.val());

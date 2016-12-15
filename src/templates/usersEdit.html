@@ -1,33 +1,54 @@
-<form novalidate ng-submit="usersEdit.update()">
-
-  <div>
-    <label>Username</label>
-    <input type="text" placeholder="Username" ng-model="usersEdit.user.username">
-  </div>
-  <div>
-    <label>First Name</label>
-    <input type="text" placeholder="First Name" ng-model="usersEdit.user.first_name">
-  </div>
-  <div>
-    <label>Last Name</label>
-    <input type="text" placeholder="Last Name" ng-model="usersEdit.user.last_name">
-  </div>
-  <div>
-    <label>Location</label>
-    <input type="text" placeholder="Location" ng-model="usersEdit.user.location">
-  </div>
-  <div>
-    <label>Email</label>
-    <input type="email" placeholder="Email" ng-model="usersEdit.user.email">
-  </div>
-  <div>
-    <label>Password</label>
-    <input type="password" placeholder="Password" ng-model="usersEdit.user.password">
-  </div>
-  <div>
-    <label>Password Confirmation</label>
-    <input type="password" placeholder="Password Confirmation" ng-model="usersEdit.user.password_confirmation">
-  </div>
-
-  <button>Update</button>
-</form>
+<section class="usersEdit-page">
+  <h1 class="usersEdit-title">Edit User</h1>
+  <form novalidate ng-submit="usersEdit.update()">
+    <div class="form-group">
+      <label for="username" class="col-xs-4">Username</label>
+      <div class="col-xs-8">
+        <input type="text" class="form-control" placeholder="Username" name="username" ng-model="usersEdit.user.username">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname" class="col-xs-4">First Name</label>
+      <div class="col-xs-8">
+        <input class="form-control" type="text" placeholder="First Name" name="firstname" ng-model="usersEdit.user.first_name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastname" class="col-xs-4">Last Name</label>
+      <div class="col-xs-8">
+        <input class="form-control" type="text" placeholder="Last Name" name="lastname" ng-model="usersEdit.user.last_name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="image" class="col-xs-4">Image</label>
+      <div class="col-xs-8">
+        <input class="form-control" type="text" placeholder="Image" name="image" ng-model="usersEdit.user.image">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="location" class="col-xs-4">Location</label>
+      <div class="col-xs-8">
+        <input class="form-control" type="text" name="location" ng-model="register.user.location" googleplace user="usersEdit.user">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email" class="col-xs-4">Email</label>
+      <div class="col-xs-8">
+        <input class="form-control" type="email" placeholder="Email" name="email" ng-model="usersEdit.user.email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password" class="col-xs-4">Password</label>
+      <div class="col-xs-8">
+        <input class="form-control" type="password" placeholder="Password" name="password" ng-model="usersEdit.user.password">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="passwordconfirmation" class="col-xs-4">Password Confirmation</label>
+      <div class="col-xs-8">
+        <input class="form-control" type="password" placeholder="Password Confirmation" name="passwordconfirmation" ng-model="usersEdit.user.password_confirmation">
+      </div>
+    </div>
+    <button class="btn btn-primary update">Update</button>
+  </form>
+</section>

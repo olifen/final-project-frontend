@@ -80,6 +80,26 @@ body {
   }
 }
 
+.usersEdit-page {
+  .usersEdit-title {
+    color: white;
+    text-align: center;
+    margin: 80px;
+    font-size: 46px;
+  }
+  label {
+    color: white;
+    text-align: center;
+  }
+  .update {
+    width: 48%;
+    font-size: 14px;
+    margin-left: 24%;
+    margin-right: 24%;
+    margin-top: 10%;
+  }
+}
+
 .login-page {
   .login-title {
     color: white;
