@@ -7,8 +7,10 @@
     <a ui-sref="gamesShow({ id: game.id })">
 
       <div class="card-block">
-        <img class="card-img-top games-image" src="http://simpleicon.com/wp-content/uploads/football.png" alt="Card image cap">
-        <div class="game-details">
+        <div class="col-xs-4">
+          <img class="card-img-top games-image" src="http://simpleicon.com/wp-content/uploads/football.png" alt="Card image cap">
+        </div>
+        <div class="game-details col-xs-8">
           <h4 class="card-title">{{ game.name }}</h4>
           <p class="card-text">{{ game.date | date : format : fullDate }}</p>
           <p class="card-text">{{ game.start_time | date:'hh:mm a' }} - {{ game.end_time | date:'hh:mm a' }}</p>
