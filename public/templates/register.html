@@ -1,6 +1,6 @@
 <section class="register-page">
   <h1 class="register-title">Register</h1>
-  {{register.user}}
+  <!-- {{register.user}} -->
   <form novalidate ng-submit="register.submit()">
 
     <div class="form-group">
@@ -37,6 +37,12 @@
       <label for="email" class="col-xs-4">Email</label>
       <div class="col-xs-8">
         <input class="form-control" type="email" placeholder="Email" name="email" ng-model="register.user.email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="mobile" class="col-xs-4">Mobile</label>
+      <div class="col-xs-8">
+        <input class="form-control" type="text" placeholder="Mobile Number" name="mobile" ng-model="register.user.phone_number">
       </div>
     </div>
     <div class="form-group">

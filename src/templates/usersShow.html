@@ -12,12 +12,16 @@
     <button class="btn btn-primary user-btns" ui-sref="gamesIndex">Find Games</button>
   </div>
 
-  <div class="col-xs-12 user-info">
+  <div class="col-xs-12 user-info card-block">
     <p>Name: {{ usersShow.user.first_name }} {{ usersShow.user.last_name }}</p>
     <p>Location: {{ usersShow.user.location }}</p>
     <p>Email: {{ usersShow.user.email }}</p>
+    <p>Mobile: {{ usersShow.user.phone_number }}</p>
+  </div>
+  <div class="col-xs-12 user-info">
     <button ng-if="main.isLoggedIn()" ui-sref="usersEdit({ id: usersShow.user.id })" class="btn btn-primary user-crud">Edit</button>
     <button ng-if="main.isLoggedIn()" ng-click="usersShow.delete()" class="btn btn-danger user-crud">Delete</button>
   </div>
+
 
 </section>

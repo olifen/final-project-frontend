@@ -10,11 +10,13 @@ function UsersIndexController(User) {
   usersIndex.all = User.query();
 }
 
-UsersShowController.$inject = ['User', '$state'];
-function UsersShowController(User, $state) {
+UsersShowController.$inject = ['User', '$state', '$auth'];
+function UsersShowController(User, $state, $auth) {
   const usersShow = this;
 
   usersShow.user = User.get($state.params);
+  // usersShow.user = User.get({id: $auth.getPayload().id});
+
 
   function deleteUser() {
     usersShow.user.$remove(() => {

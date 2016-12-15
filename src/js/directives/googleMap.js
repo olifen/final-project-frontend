@@ -1,8 +1,8 @@
 angular.module('finalProject')
   .directive('googleMap', googleMap);
 
-googleMap.$inject = ['$window'];
-function googleMap($window) {
+googleMap.$inject = ['$window', '$state'];
+function googleMap($window, $state) {
   return {
     restrict: 'E',
     replace: true,
@@ -15,8 +15,8 @@ function googleMap($window) {
 
       const map = new $window.google.maps.Map(element[0], {
         center: {
-          lat: 51.508530,
-          lng: -0.076132
+          lat: 51.4428,
+          lng: -0.1526
         },
         zoom: 11
       });
@@ -47,10 +47,12 @@ function googleMap($window) {
               const marker = new $window.google.maps.Marker({
                 position: { lat: venue.lat, lng: venue.lng },
                 map: map,
-                animation: $window.google.maps.Animation.DROP
+                animation: $window.google.maps.Animation.DROP,
+                venue: venue
               });
+
               marker.addListener('click', () => {
-                // infoWindow.open(map, marker);
+                $state.go('venuesShow', { id: venue.id });
               });
 
               markers.push(marker);

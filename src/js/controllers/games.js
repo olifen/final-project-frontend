@@ -55,6 +55,19 @@ function GamesShowController(Game, $state, Membership, $window, $auth) {
   }
   gamesShow.alreadyInGame = alreadyInGame;
 
+
+  function isCurrentUserOrganiser() {
+    let userIsOrganiser = false;
+
+    if (gamesShow.game.$resolved) {
+      userIsOrganiser = gamesShow.game.user.id === $auth.getPayload().id;
+    }
+
+    return userIsOrganiser;
+  }
+  gamesShow.isCurrentUserOrganiser = isCurrentUserOrganiser;
+
+
   gamesShow.addMembership = addMembership;
   function addMembership(){
     const membership = {

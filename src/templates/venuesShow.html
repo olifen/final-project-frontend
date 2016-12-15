@@ -14,27 +14,10 @@
           <p class="card-text">{{ game.start_time | date:'hh:mm a' }} - {{ game.end_time | date:'hh:mm a' }}</p>
         </div>
       </div>
+    </a>
   </div>
-
+<!-- ID: {{venuesShow.venue.id}} -->
   <button ng-if="main.isLoggedIn()" class="button btn btn-primary create-game" ui-sref="gamesNew">Create Game</button><br>
   <button ng-if="main.isLoggedIn()" class="button btn btn-primary venue-crud" ui-sref="venuesEdit({ id: venuesShow.venue.id })">Edit Venue</button>
   <button ng-if="main.isLoggedIn()" class="button btn btn-danger venue-crud" ng-click="venuesShow.delete()">Delete Venue</button>
 </section>
-
-
-<!-- <div class="card col-md-4" ng-repeat="game in gamesIndex.all">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-block">
-    <a ui-sref="gamesShow({ id: game.id })">
-      <h4 class="card-title">{{ game.name }}</h4>
-    </a>
-    <a ui-sref="venuesShow({ id: game.venue.id })">
-      <p class="card-text">{{ game.venue.name }}</p>
-    </a>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{ game.date | date : format : fullDate }}</li>
-    <li class="list-group-item">{{ game.start_time | date:'hh:mm a' }}</li>
-    <li class="list-group-item">{{ game.end_time | date:'hh:mm a' }}</li>
-  </ul>
-</div> -->

@@ -1,5 +1,19 @@
 body {
   background-image: url("http://thegrangenews.co.uk/sportscentre/wp-content/uploads/2012/10/astro1-1024x682.jpg");
+  font-family: 'Varela', cursive;
+}
+
+.navbar {
+  background-color: #00B06A!important;
+}
+
+.nav-link {
+  color: white!important;
+}
+
+.btn-primary {
+  background-color: #00B06A!important;
+  border: #00B06A!important;
 }
 
 .google-map {
@@ -30,6 +44,10 @@ body {
     margin: 7% 0 auto;
     width: 150px;
   }
+  .card-block {
+    background-color: rgba(0,0,0,0.8);
+
+  }
   .user-info {
     margin: 5% 0 auto;
   }
@@ -38,7 +56,7 @@ body {
     font-size: 14px;
     margin-left: 9%;
     margin-right: 9%;
-    margin-top: 60%;
+    margin-top: 20%;
   }
 }
 
@@ -148,7 +166,7 @@ body {
     font-size: 46px;
   }
   .venues-list {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(255,255,255,0.8);
     .venue-image {
       width: 41px;
       height: 41px;
@@ -203,6 +221,10 @@ body {
 
 .gamesNew-page {
   color: white;
+  text-align: center;
+  .p {
+    background-color: rgba(0,0,0,0.8);
+  }
 }
 
 .games-page {
@@ -249,14 +271,15 @@ body {
   margin-bottom: 5%;
 }
 
+.gamesShow-title {
+  color: white;
+  text-align: center;
+  margin: 10px;
+  font-size: 46px;
+}
+
 .gamesShow-page {
   background-color: rgba(0,0,0,0.8);
-  h1 {
-    color: white;
-    text-align: center;
-    margin: 10px;
-    font-size: 46px;
-  }
   p {
     color: white;
   }

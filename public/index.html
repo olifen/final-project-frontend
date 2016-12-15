@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Final Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela" rel="stylesheet">
     <link rel="stylesheet" href="/css/vendor.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2D2KameVo1zRKdINFx7zv5UTEnyhvZ7c&libraries=places"></script>
@@ -18,7 +19,7 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a ng-if="main.isLoggedIn()"class="nav-link" ui-sref="usersIndex">Users</a>
+            <a ng-if="main.isLoggedIn()"class="nav-link" ui-sref="usersShow({id: main.currentUser.id})">Profile</a>
           </li>
           <li class="nav-item">
             <a ng-if="main.isLoggedIn()"class="nav-link" ui-sref="venuesIndex">Venues</a>
