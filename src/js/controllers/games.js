@@ -12,15 +12,15 @@ function GamesIndexController(Game) {
   gamesIndex.all = Game.query();
 }
 
-GamesShowController.$inject = ['Game', '$state', 'Membership', '$window'];
-function GamesShowController(Game, $state, Membership, $window) {
+GamesShowController.$inject = ['Game', '$state', 'Membership', '$window', '$auth'];
+function GamesShowController(Game, $state, Membership, $window, $auth) {
   const gamesShow = this;
   function deleteGame() {
     gamesShow.game.$remove(() => {
       $state.go('gamesIndex');
     });
   }
-
+  gamesShow.currentLoggedInUser = $auth.getPayload();
   gamesShow.delete = deleteGame;
   gamesShow.leaveGame = leaveGame;
 
@@ -47,6 +47,34 @@ function GamesShowController(Game, $state, Membership, $window) {
   function canJoinGame() {
     return (numberOfPlayers() < numberOfPlaces());
   }
+
+  function alreadyInGame() {
+    return gamesShow.game.memberships.findIndex((membership) => {
+      return membership.user.id === gamesShow.currentLoggedInUser.id;
+    }) > -1;
+    // const game = Game.get($state.params).$promise.then((game) => {
+    //   console.log('game in promise',game);
+    // });
+    // console.log('game',game);
+    // console.log('players: ', players);
+    // gamesShow.game.memberships.indexOf(gamesShow.currentLoggedInUser) !== -1"
+    // const currentMemebersIds = [];
+
+    // players.forEach((user) => {
+    //   console.log(user.id);
+    //   // currentMemebersIds.push(user.id);
+    //   // console.log(currentMemebersIds);
+    //   if (user.id !== gamesShow.currentLoggedInUser.id) {
+    //     console.log('he aint here');
+    //     return true;
+    //   } else {
+    //     console.log('hes here');
+    //     return false;
+    //   }
+    // })
+
+  }
+  gamesShow.alreadyInGame = alreadyInGame;
 
   gamesShow.addMembership = addMembership;
   function addMembership(){

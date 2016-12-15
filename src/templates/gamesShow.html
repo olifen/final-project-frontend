@@ -15,14 +15,18 @@
     <li ng-repeat="membership in gamesShow.game.memberships">
       <p>{{membership.user.first_name}} {{membership.user.last_name}}</p>
       <button class="btn btn-danger" ng-click="gamesShow.leaveGame(membership)">Leave Game</button>
-
     </li>
 
-  </ul>
 
-  <button class="btn btn-primary" ng-click="gamesShow.addMembership()" ng-if="gamesShow.canJoinGame()">Join Game</button>
+  </ul>
+  <!-- gamesShow.canJoinGame() &&  -->
+
+  <button class="btn btn-primary" ng-click="gamesShow.addMembership()" ng-if="gamesShow.game.$resolved && !gamesShow.alreadyInGame()">Join Game</button>
+  <!-- <button ng-click="gamesShow.notAlreadyInGame()">Yo?</button> -->
 
   <button class="btn btn-primary" ui-sref="gamesEdit({ id: gamesShow.game.id })" class="button">Edit</button>
   <button class="btn btn-danger" ng-if="main.isLoggedIn()" ng-click="gamesShow.delete()">Delete</button>
 
 </section>
+
+{{ gamesShow.game.memberships[0].user.id }}

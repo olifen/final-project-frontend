@@ -8,8 +8,8 @@ function googleplace($window) {
     restrict: 'A',
     require: 'ngModel',
     scope: {
-      venue: '='
-      // user: '='
+      venue: '=',
+      user: '='
     },
     link: function($scope, element, attrs, model) {
       const options = {
@@ -23,11 +23,13 @@ function googleplace($window) {
         const place = autocomplete.getPlace();
         const latLng = place.geometry.location.toJSON();
 
+        $scope.user.lat = latLng.lat;
+        $scope.user.lat = latLng.lng;
+
         $scope.venue.lat = latLng.lat;
         $scope.venue.lng = latLng.lng;
         $scope.venue.postcode = place.formatted_address;
-        // $scope.user.lat = latLng.lat;
-        // $scope.user.lat = latLng.lng;
+
         //
         // console.log($scope.user.lat);
 
