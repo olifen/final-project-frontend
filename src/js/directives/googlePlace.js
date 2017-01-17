@@ -36,7 +36,7 @@ function googleplace($window) {
 
         //
         // console.log($scope.user.lat);
-        console.log('scope:', $scope.user);
+        // console.log('scope:', $scope.user);
         // console.log(place);
         // console.log(place.formatted_address);
 
