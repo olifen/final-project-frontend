@@ -8,11 +8,11 @@ function Router($stateProvider, $urlRouterProvider) {
       url: '/home',
       templateUrl: '/templates/home.html'
     })
-    // .state('usersIndex', {
-    //   url: '/users',
-    //   templateUrl: '/templates/usersIndex.html',
-    //   controller: 'UsersIndexController as usersIndex'
-    // })
+    .state('usersIndex', {
+      url: '/users',
+      templateUrl: '/templates/usersIndex.html',
+      controller: 'UsersIndexController as usersIndex'
+    })
     .state('register', {
       url: '/register',
       templateUrl: '/templates/register.html',
